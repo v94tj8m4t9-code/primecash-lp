@@ -81,6 +81,7 @@ section#duvidas-frequentes .framer-1p1jkfc h2 {
   width: 100% !important;
   white-space: normal !important;
   line-height: 1.45 !important;
+  text-align: left !important;
 }
 
 /* Evita que os textos dos cartões comerciais avancem para fora do card. */
