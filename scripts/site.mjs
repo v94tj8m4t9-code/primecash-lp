@@ -14,23 +14,37 @@ const htmlDecode = text => text.replace(/&(#x[0-9a-f]+|#\d+|amp|lt|gt|quot|apos|
 });
 
 const seo = {
-  title: 'PrimeCash | Pagamentos para Clínicas e Profissionais de Saúde',
-  description: 'Organize cobranças e recebimentos da sua clínica com Pix, cartão e link de pagamento. PrimeCash para saúde, bem-estar e performance.',
-  keywords: 'pagamentos para clínicas, pagamento para profissionais de saúde, cobrança de pacientes, recebimentos para clínicas, link de pagamento para clínicas, pagamento para clínica odontológica, gestão de recebimentos, cobrar pacientes pelo WhatsApp, parcelamento de tratamentos, pagamentos para clínica de estética, sistema de cobrança para clínicas',
+  title: 'PrimeCash | Gestão Financeira e Pagamentos para Saúde',
+  description: 'Pagamentos, gestão financeira, emissão de notas fiscais e cobranças recorrentes para profissionais e estabelecimentos de saúde, bem-estar e performance.',
+  keywords: 'gestão financeira para clínicas, pagamentos para clínicas, pagamento para profissionais de saúde, cobrança de pacientes, emissão de notas fiscais para clínicas, cobrança recorrente, cobrar pacientes pelo WhatsApp, link de pagamento para clínicas, Bolepix, Pix para clínicas',
 };
 
 const faq = [
-  ['Como funciona o link de pagamento para clínicas?', 'A clínica pode gerar uma cobrança e enviar o link ao paciente por um canal como WhatsApp. O paciente acessa o link e conclui o pagamento utilizando as formas disponíveis para aquela operação.'],
-  ['Posso cobrar um paciente pelo WhatsApp?', 'Sim. Com o link de pagamento, a cobrança pode ser enviada pelo WhatsApp, permitindo que o paciente conclua o processo à distância quando essa modalidade estiver disponível para sua operação.'],
-  ['Quais formas de pagamento a PrimeCash oferece?', 'A PrimeCash trabalha com formas de pagamento como Pix, cartão e link de pagamento, conforme as funcionalidades habilitadas para cada operação.'],
-  ['A PrimeCash serve para clínicas odontológicas?', 'A PrimeCash pode atender clínicas odontológicas que recebem por consultas, tratamentos e procedimentos e buscam uma forma mais organizada de realizar cobranças e acompanhar recebimentos.'],
-  ['A PrimeCash serve para clínicas de estética?', 'Sim. Clínicas e profissionais de estética podem utilizar a solução para cobranças relacionadas a avaliações, procedimentos, protocolos e outros serviços compatíveis com a operação.'],
-  ['Minha clínica é pequena. Faz sentido utilizar a PrimeCash?', 'O tamanho da clínica não é o único critério. O mais importante é entender como você realiza cobranças e recebimentos hoje e se existe espaço para tornar esse processo mais organizado. Nosso time pode avaliar isso com você em uma demonstração.'],
-  ['Preciso abandonar minha maquininha para usar a PrimeCash?', 'Não necessariamente. Na demonstração, nosso time pode entender sua operação atual e apresentar onde as funcionalidades da PrimeCash podem complementar seu processo de recebimento.'],
-  ['O paciente precisa voltar à clínica somente para pagar?', 'Em cobranças que podem ser realizadas remotamente, um link de pagamento permite que o paciente conclua o processo à distância, sem precisar retornar apenas para efetuar o pagamento.'],
+  ['Como funciona o link de pagamento para profissionais e clínicas de saúde?', 'O profissional ou a clínica gera uma cobrança e envia o link ao paciente. O pagamento pode ser concluído pelas formas disponíveis para aquela operação.'],
+  ['É possível realizar cobranças pelo WhatsApp?', 'Sim. A cobrança pode ser enviada pelo WhatsApp por meio de um link de pagamento, reduzindo etapas e permitindo a conclusão à distância.'],
+  ['Quais formas de pagamento a PrimeCash disponibiliza?', 'A PrimeCash disponibiliza pagamentos por Pix, boleto, cartão e Bolepix, conforme as funcionalidades habilitadas para cada operação.'],
+  ['A PrimeCash atende clínicas odontológicas?', 'Sim. A PrimeCash atende clínicas odontológicas que desejam organizar cobranças e recebimentos de consultas, tratamentos e procedimentos.'],
+  ['A PrimeCash atende clínicas de estética?', 'Sim. Clínicas e profissionais de estética podem utilizar a solução em cobranças relacionadas a avaliações, procedimentos, protocolos e outros serviços.'],
+  ['A PrimeCash atende consultórios e operações de menor porte?', 'Sim. Nossa equipe avalia o processo atual de cobrança e recebimento para entender como a plataforma pode ajudar cada operação.'],
+  ['É necessário substituir a maquininha atual para utilizar a PrimeCash?', 'Não. A PrimeCash pode complementar o processo atual de recebimento, de acordo com as necessidades apresentadas na demonstração.'],
+  ['O paciente precisa se deslocar até a clínica exclusivamente para realizar o pagamento?', 'Não. Nas cobranças remotas, o paciente pode concluir o pagamento à distância por meio de um link.'],
   ['Como funcionam as taxas da PrimeCash?', 'As condições comerciais dependem das características e formas de pagamento da operação. Fale com nosso time para conhecer as condições aplicáveis à sua clínica.'],
-  ['Como solicitar uma demonstração da PrimeCash?', 'Clique em “Quero ver como funciona” e converse com nosso time pelo WhatsApp. Vamos entender sua operação e apresentar as funcionalidades disponíveis.'],
+  ['É possível emitir notas fiscais pela plataforma?', 'Sim. A plataforma permite emitir notas fiscais da empresa do profissional ou da clínica, conforme as funcionalidades habilitadas.'],
+  ['Como funciona a cobrança recorrente para os clientes ou pacientes do profissional?', 'A plataforma permite configurar cobranças recorrentes e acompanhar os recebimentos em um único ambiente.'],
+  ['Como funcionam as mensagens automáticas de cobrança pelo WhatsApp?', 'O profissional ou a clínica configura mensagens automáticas e recorrentes de cobrança para reduzir o acompanhamento manual.'],
+  ['Como solicitar uma demonstração da plataforma?', 'Clique em “Falar com especialista” e converse com nossa equipe pelo WhatsApp.'],
 ];
+
+const objectiveHeaderCss = `<style id="primecash-objective-header">
+nav [data-framer-name="Taxas"],
+nav [data-framer-name="Por que nós"],
+nav [data-framer-name="Denúncias"],
+nav div:has(> p > a[href$="#porque-nos-escolher"]),
+nav div:has(> p > a[href$="/denúncias"]),
+nav a[href$="#porque-nos-escolher"],
+nav a[href$="/denúncias"],
+nav [data-framer-name^="Frame 11"] { display: none !important; }
+</style>`;
 
 function applySeo(text, filename) {
   if (resolve(filename) !== resolve('content/index.html')) return text;
@@ -62,6 +76,8 @@ function applySeo(text, filename) {
   const titleGuard = `<script id="primecash-seo-title">(()=>{const title=${title};const apply=()=>{if(document.title!==title)document.title=title};apply();new MutationObserver(apply).observe(document.documentElement,{subtree:true,childList:true,characterData:true});window.addEventListener('load',apply);[0,100,500,1500,3000].forEach(delay=>setTimeout(apply,delay))})()</script>`;
   text = text.replace('</head>', `\n    <script id="primecash-faq-schema" type="application/ld+json">${schema}</script>\n</head>`);
   text = text.replace('</body>', `\n    ${titleGuard}\n</body>`);
+  text = text.replace('</head>', `\n    ${objectiveHeaderCss}\n</head>`);
+  text = text.replaceAll('href="./politicas-de-compliance"', 'href="./politica-de-privacidade/"');
   return text;
 }
 
@@ -104,6 +120,9 @@ export async function applyCopy(body, filename, changes) {
     };
     visit(tree);
     for (const edit of edits.sort((a, b) => b.start - a.start)) text = text.slice(0, edit.start) + edit.replacement + text.slice(edit.end);
+    if (filename.endsWith('script_main.AudskF4-.mjs')) {
+      text = text.replace('href:{webPageId:`zLAl9rMzp`},motionChild:!0,nodeId:`Rsup7r367`', 'href:`/politica-de-privacidade/`,motionChild:!0,nodeId:`Rsup7r367`');
+    }
   }
   if (extname(filename) === '.html') text = applySeo(text, filename);
   return Buffer.from(text);
