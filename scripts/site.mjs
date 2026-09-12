@@ -44,6 +44,79 @@ nav div:has(> p > a[href$="/denúncias"]),
 nav a[href$="#porque-nos-escolher"],
 nav a[href$="/denúncias"],
 nav [data-framer-name^="Frame 11"] { display: none !important; }
+
+/* Remove os pequenos rótulos editoriais com barras, preservando a hierarquia
+   visual dos títulos principais. */
+[data-framer-component-type="RichTextContainer"][data-framer-name^="//"]:not([data-framer-name^="//0"]) {
+  display: none !important;
+}
+
+/* Mantém os títulos longos dentro da grade e com respiro lateral consistente. */
+section#benefícios .framer-1webh70,
+section#benefícios .framer-a2qgkb,
+section#duvidas-frequentes .framer-nf0qb2,
+section#duvidas-frequentes .framer-1p1jkfc {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+section#benefícios .framer-a2qgkb h2,
+section#duvidas-frequentes .framer-1p1jkfc h2 {
+  width: 100% !important;
+  max-width: 100% !important;
+  text-align: center !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  font-size: clamp(34px, 3.25vw, 46px) !important;
+  line-height: 1.08 !important;
+}
+
+/* Faz o texto de apoio da jornada ocupar duas linhas em telas amplas. */
+.framer-1kgpchj .framer-1iscmbg {
+  width: min(880px, 100%) !important;
+  max-width: 880px !important;
+  flex: 0 0 auto !important;
+}
+.framer-1kgpchj .framer-1iscmbg p {
+  width: 100% !important;
+  white-space: normal !important;
+  line-height: 1.45 !important;
+}
+
+/* Evita que os textos dos cartões comerciais avancem para fora do card. */
+.framer-1xfqg3x,
+.framer-1xfqg3x .framer-1k2c19q,
+.framer-1xfqg3x .framer-v2y9j3,
+.framer-1xfqg3x .framer-11gw34l,
+.framer-1xfqg3x [data-framer-component-type="RichTextContainer"] {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+.framer-1xfqg3x p,
+.framer-1xfqg3x h5 {
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  text-align: left !important;
+}
+
+@media (max-width: 809.98px) {
+  section#benefícios .framer-a2qgkb h2 {
+    font-size: clamp(27px, 7.4vw, 32px) !important;
+  }
+  section#duvidas-frequentes .framer-1p1jkfc h2 {
+    font-size: 18px !important;
+    line-height: 1.2 !important;
+    text-wrap: balance;
+  }
+  section#duvidas-frequentes .framer-nf0qb2 {
+    width: calc(100% + 40px) !important;
+    max-width: none !important;
+    margin-left: -20px !important;
+  }
+  .framer-1kgpchj .framer-1iscmbg {
+    width: 100% !important;
+  }
+}
 </style>`;
 
 function applySeo(text, filename) {
