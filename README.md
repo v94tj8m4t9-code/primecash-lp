@@ -1,4 +1,13 @@
-# PrimeCash — cópia da LP
+# PrimeCash — landing page
+
+## Página principal
+
+A página principal redesenhada está em `content/index.html`. Ela é um documento
+HTML autocontido, com estilos, imagens e interações incorporados. O build preserva
+esse arquivo sem aplicar as transformações da antiga exportação do Framer.
+
+As páginas auxiliares e legais continuam armazenadas em `content/` e são
+publicadas junto com a página principal.
 
 Cópia da página pública https://primecashoficial.com.br/ capturada em 02/09/2026.
 O documento, o CSS e o runtime publicado pelo Framer foram preservados. Imagens,

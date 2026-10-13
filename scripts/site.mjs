@@ -156,6 +156,10 @@ function applySeo(text, filename) {
 }
 
 export async function applyCopy(body, filename, changes) {
+  // The redesigned homepage is maintained as a complete, self-contained document.
+  // Keep it byte-for-byte intact during builds; legacy copy transforms remain
+  // available for the preserved secondary pages and Framer assets.
+  if (resolve(filename) === resolve('content/index.html')) return body;
   if (!changes.size || !['.html', '.mjs', '.js'].includes(extname(filename))) return body;
   let text = body.toString('utf8');
   if (extname(filename) === '.html') {
